@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		<table>
+			<tr>
+				<td>Id</td>
+				<td>Name</td>
+				<td>Price</td>
+				<td>Quantity</td>
+			</tr>
+			<tr ng-repeat="item in listProduct">
+				<td>{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.price}}</td>
+				<td>{{item.quantity}}</td>
+				<td><input type="button" value="Delete" ng-click="btnDelete($index)"></td>
+				<td><input type="button" value="Update" ng-click="btnUpdate($index, $event)"></td>
+			</tr>
+		</table>
+
+		<table>
+			<tr>
+				<td>Id</td>	<td><input type="text" ng-model="id" required></td>			
+			</tr>
+			<tr>
+				<td>Name</td><td><input type="text" ng-model="name" required></td>	
+			</tr>
+			<tr>
+				<td>Price</td><td><input type="text" ng-model="price"></td>	
+			</tr>
+			<tr>
+				<td>Quantity</td><td><input type="text" ng-model="quantity"></td>	
+			</tr>
+			<tr>
+				<td><input type="button" value="Save" ng-click="btnSave(id)"></td>
+				<td><input type="button" value="Add" ng-click="btnAdd(id)"></td>
+			</tr>
+		</table>
+
+	</div>
+<script type="text/javascript" src="angular.js"></script>	
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
